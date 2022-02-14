@@ -1,5 +1,5 @@
-const { fstat } = require('fs');
 var url= require('url');
+var fs =require('fs');
 function renderHTML(path, response){
     fs.readFile(path,null, function(error,data){
         if(error){
