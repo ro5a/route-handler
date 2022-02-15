@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "express": "^4.17.2"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "route-handler",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ro5a/route-handler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ro5a/route-handler/issues"
+  },
+  "homepage": "https://github.com/ro5a/route-handler#readme"
 }
