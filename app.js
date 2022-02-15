@@ -20,6 +20,9 @@ hundleRequest: function(request,response){
         case'/' :
         renderHTML('./index.html',response);
         break;
+        case'/' :
+        renderHTML('./contuct.html',response);
+        break;
         case'/post':
         renderHTML('./post.html',response);
         break;
