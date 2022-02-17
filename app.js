@@ -1,35 +1,15 @@
-var url= require('url');
-var fs =require('fs');
-function renderHTML(path, response){
-    fs.readFile(path,null, function(error,data){
-        if(error){
-            response.writeHead(404);
-            response.write('file not found!');
-            
-        }else{
-            response.write(data);
-        }
-        response.end();
+var express = require('express');
+var app = express();
+app.set('view engine', 'ejs');
+
+app.get('/about', function(req, res) { 
+     res.render('about');
     });
-}
-module.exports={
-hundleRequest: function(request,response){
-    response.writeHead(200,{'Content-Type':'text/html'});
-    var path = url.parse(request.url).pathname;
-    switch(path){
-        case'/' :
-        renderHTML('./index.html',response);
-        break;
-        case'/' :
-        renderHTML('./contuct.html',response);
-        break;
-        case'/post':
-        renderHTML('./post.html',response);
-        break;
-        default:
-            response.writeHead(404);
-            response.write('Route not defined');
-            response.end();
-    }
-}
-};
+    app.get('/', function(req, res) { 
+         res.render('index');
+        });
+        app.get('*', function(req, res) { 
+             res.render('error');
+            });
+            app.listen(3000);
+
